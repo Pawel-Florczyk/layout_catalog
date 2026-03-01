@@ -6,7 +6,7 @@
   justify-content: center;
   place-items: center;
   grid-area: catalog;
-  gap: 48px 46px;
+  gap: 46px 48px;
   padding: 50px 40px;
 
   @media (min-width: 488px) {
@@ -28,10 +28,9 @@
     height: $card-height;
     border: 1px solid $color-border;
     border-radius: 5px;
+    transition: transform 300ms;
 
     &:hover {
-      transition: transform;
-      transition-duration: 300ms;
       transform: scale(1.2);
     }
 
@@ -61,6 +60,10 @@
       letter-spacing: 0%;
       color: $color-main-text;
       vertical-align: bottom;
+
+        &:hover {
+          color: $color-title-hover;
+        }
     }
 
     &__code {
