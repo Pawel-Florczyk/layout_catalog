@@ -2,23 +2,23 @@
 
 .product {
   display: grid;
-  grid-template-columns: repeat(1, 200px);
+  grid-template-columns: repeat(1, $card-width);
   justify-content: center;
   place-items: center;
   grid-area: catalog;
-  gap: 46px 48px;
-  padding: 50px 40px;
+  gap: $cards-gaps-row $cards-gaps-column;
+  padding: $cards-padding-verical $cards-padding-horizontal;
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, $card-width);
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, $card-width);
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, $card-width);
   }
 
   &-card {
@@ -41,7 +41,7 @@
       align-items: center;
       width: $image-width;
       height: $image-height;
-      background-image: url('../src/images/imac.jpeg');
+      background-image: url('../images/imac.jpeg');
       background-size: 100% 100%;
       background-position: center;
       image-rendering: optimizeQuality;
@@ -60,10 +60,15 @@
       letter-spacing: 0%;
       color: $color-main-text;
       vertical-align: bottom;
+      transition: color 300ms;
 
-        &:hover {
-          color: $color-title-hover;
-        }
+      &:hover {
+      transform: scale(1.2);
+
+      .product-card__item {
+        color: $color-title-hover;
+      }
+    }
     }
 
     &__code {
@@ -146,6 +151,7 @@
       height: 40px;
       border-radius: 5px;
       margin-left: $spacing-base;
+      transition-duration: 300ms;
 
       &:hover {
         position: absolute;
@@ -166,7 +172,6 @@
         height: 40px;
         border-radius: 5px;
         margin-left: $spacing-base;
-        transition-duration: 300ms;
       }
     }
   }

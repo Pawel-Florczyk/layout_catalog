@@ -52,10 +52,10 @@
     height: 60px;
     color: $color-main-text;
     text-transform: uppercase;
+    transition-duration: 300ms;
 
     &:hover {
       color: $color-button;
-      transition-duration: 300ms;
     }
 
     &.is-active {
