@@ -7,17 +7,17 @@
   place-items: center;
   grid-area: catalog;
   gap: $cards-gaps-row $cards-gaps-column;
-  padding: $cards-padding-verical $cards-padding-horizontal;
+  padding: $cards-padding-vertical $cards-padding-horizontal;
 
-  @media (min-width: 488px) {
+  @media (min-width: $breakpoint-two-cloumns) {
     grid-template-columns: repeat(2, $card-width);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-three-cloumns) {
     grid-template-columns: repeat(3, $card-width);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: $breakpoint-four-columns) {
     grid-template-columns: repeat(4, $card-width);
   }
 
@@ -32,6 +32,11 @@
 
     &:hover {
       transform: scale(1.2);
+
+      .product-card__item {
+        color: $color-title-hover;
+      }
+    }
     }
 
     &__image {
@@ -61,14 +66,6 @@
       color: $color-main-text;
       vertical-align: bottom;
       transition: color 300ms;
-
-      &:hover {
-      transform: scale(1.2);
-
-      .product-card__item {
-        color: $color-title-hover;
-      }
-    }
     }
 
     &__code {
@@ -175,4 +172,3 @@
       }
     }
   }
-}
